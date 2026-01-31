@@ -2,7 +2,7 @@ package dev.zenith.species.system;
 
 import dev.zenith.species.component.SpeciesComponent;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.logging.Logger;
 
 /**
@@ -36,7 +36,7 @@ public class SpeciesChangeSystem {
      * @param speciesType The ComponentType for SpeciesComponent
      * @param playerRefType The ComponentType for PlayerRef
      */
-    public SpeciesChangeSystem(@Nonnull Object speciesType, @Nonnull Object playerRefType) {
+    public SpeciesChangeSystem(@NotNull Object speciesType, @NotNull Object playerRefType) {
         this.speciesType = speciesType;
         this.playerRefType = playerRefType;
     }

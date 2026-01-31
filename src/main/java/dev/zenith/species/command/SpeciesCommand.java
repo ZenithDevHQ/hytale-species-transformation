@@ -2,7 +2,7 @@ package dev.zenith.species.command;
 
 import dev.zenith.species.component.SpeciesComponent;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 import java.util.logging.Logger;
 
@@ -39,7 +39,7 @@ public class SpeciesCommand {
      *
      * @param speciesType The ComponentType for SpeciesComponent
      */
-    public SpeciesCommand(@Nonnull Object speciesType) {
+    public SpeciesCommand(@NotNull Object speciesType) {
         this.speciesType = speciesType;
     }
 

@@ -10,7 +10,6 @@ A Hytale plugin that enables players to transform between human and custom speci
 - **Reversible Transformations**: Human ↔ Custom Species via the same altar
 - **Admin Commands**: `/transform` and `/species` for testing
 - **Session Persistence**: Species data persists via BuilderCodec serialization
-- **Future Extensibility**: Support for species subtypes via "dream mechanic"
 
 ## Installation
 
@@ -34,13 +33,6 @@ The modeler needs to create these assets in a content pack:
 |----------|------|-------------|
 | `species:newspecies` | Player Model | The custom species player model |
 | `species:transformation_altar` | Block | The transformation altar block |
-
-### Optional Future Assets
-
-| Asset ID | Type | Description |
-|----------|------|-------------|
-| `species:newspecies/subtype_a` | Player Model | Species subtype variant A |
-| `species:newspecies/subtype_b` | Player Model | Species subtype variant B |
 
 ## Commands
 
@@ -99,7 +91,7 @@ SpeciesTransformationPlugin
 
 `SpeciesComponent` stores:
 - `species` - Current species ID (default: "human")
-- `subtype` - Species subtype (for future dream mechanic)
+- `subtype` - Species subtype (for future extensibility)
 - `transformedAt` - Timestamp of last transformation
 - `originalSkin` - Stored human skin for reverting
 
@@ -124,19 +116,6 @@ SpeciesTransformationPlugin
    ```java
    new TransformationAltarHandler(speciesType, "myspecies")
    ```
-
-### Implementing the Dream Mechanic (Subtypes)
-
-```java
-// In a future DreamSystem or DreamInteractionHandler:
-public void onDreamComplete(PlayerRef player, String chosenSubtype) {
-    SpeciesComponent species = player.getHolder().getComponent(speciesType);
-    if (species != null && !species.isHuman()) {
-        species.setSubtype(chosenSubtype);
-        // SpeciesChangeSystem.onComponentSet will handle visual update
-    }
-}
-```
 
 ## Building
 

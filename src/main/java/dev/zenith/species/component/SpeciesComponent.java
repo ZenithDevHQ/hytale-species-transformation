@@ -1,7 +1,7 @@
 package dev.zenith.species.component;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Component that tracks a player's current species.
@@ -65,7 +65,7 @@ public class SpeciesComponent implements Cloneable {
      *
      * @return The species ID (e.g., "human", "newspecies")
      */
-    @Nonnull
+    @NotNull
     public String getSpecies() {
         return species;
     }
@@ -129,7 +129,7 @@ public class SpeciesComponent implements Cloneable {
      * @param newSpecies The species ID to transform to
      * @param currentSkin The player's current skin (stored if transforming from human)
      */
-    public void transformTo(@Nonnull String newSpecies, @Nullable Object currentSkin) {
+    public void transformTo(@NotNull String newSpecies, @Nullable Object currentSkin) {
         if (isHuman() && currentSkin != null) {
             // Store human appearance for reverting later
             this.originalSkin = currentSkin;
@@ -156,7 +156,7 @@ public class SpeciesComponent implements Cloneable {
      * @param targetSpecies The species to check
      * @return true if transformation is allowed
      */
-    public boolean canTransformTo(@Nonnull String targetSpecies) {
+    public boolean canTransformTo(@NotNull String targetSpecies) {
         // Basic check - can't transform to current species
         return !targetSpecies.equals(this.species);
     }

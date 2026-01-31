@@ -6,7 +6,7 @@ import dev.zenith.species.command.TransformCommand;
 import dev.zenith.species.component.SpeciesComponent;
 import dev.zenith.species.system.SpeciesChangeSystem;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.logging.Logger;
 
 /**
@@ -51,7 +51,7 @@ public class SpeciesTransformationPlugin {
      *
      * @param init The plugin initialization data from Hytale
      */
-    public SpeciesTransformationPlugin(@Nonnull Object init) {
+    public SpeciesTransformationPlugin(@NotNull Object init) {
         this.init = init;
     }
 

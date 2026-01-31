@@ -2,7 +2,7 @@ package dev.zenith.species.block;
 
 import dev.zenith.species.component.SpeciesComponent;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.logging.Logger;
 
 /**
@@ -38,7 +38,7 @@ public class TransformationAltarHandler {
      * @param speciesType The ComponentType for SpeciesComponent
      * @param targetSpecies The species ID this altar transforms to
      */
-    public TransformationAltarHandler(@Nonnull Object speciesType, @Nonnull String targetSpecies) {
+    public TransformationAltarHandler(@NotNull Object speciesType, @NotNull String targetSpecies) {
         this.speciesType = speciesType;
         this.targetSpecies = targetSpecies;
     }

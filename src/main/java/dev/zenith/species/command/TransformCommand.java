@@ -2,7 +2,7 @@ package dev.zenith.species.command;
 
 import dev.zenith.species.component.SpeciesComponent;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 import java.util.logging.Logger;
 
@@ -40,7 +40,7 @@ public class TransformCommand {
      *
      * @param speciesType The ComponentType for SpeciesComponent
      */
-    public TransformCommand(@Nonnull Object speciesType) {
+    public TransformCommand(@NotNull Object speciesType) {
         this.speciesType = speciesType;
     }
 
